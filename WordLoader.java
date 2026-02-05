@@ -1,6 +1,6 @@
 /**
  * Group Number:
- * Names: Shawn, Jing Yuan, Kyros, Justin
+ * Names: Shawn, Jing Yuan, Kyros, Justin, Tyler
  * 
  * PURPOSE: This class manages the collection of words used in the Hangman game. It acts as a simple database for words.
  */
@@ -13,13 +13,11 @@ import java.util.Random;
 public class WordLoader {
     //instance variable to store words
     private List<String> wordList;
-    
     //constructor
     public WordLoader() {
         wordList = new ArrayList<>();  // Initialize empty list
         initializeWords();              // Populate with default words
     }
-    
     //private (because it's only used internally by this class) method to load initial words
     private void initializeWords() {
         //add words to the list
@@ -36,17 +34,14 @@ public class WordLoader {
         wordList.add("HANGMAN");
         wordList.add("INTERFACE");
     }
-    
     //public method to get a random word for the game
     public String getRandomWord() {
-
         //create random object to generate random index
         Random random = new Random();
-        
         //generate random number between 0 and (list size - 1)
         int index = random.nextInt(wordList.size());
-        
         //return
         return wordList.get(index);
     }
+
     }
