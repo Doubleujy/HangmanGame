@@ -13,47 +13,38 @@ public class GameUI {
     public GameUI() {
         scanner = new Scanner(System.in);
     }
-    
     //display welcome message
     public void displayWelcomeMessage() {
         System.out.println("=======================================");
         System.out.println("        WELCOME TO HANGMAN GAME        ");
         System.out.println("=======================================\n");
     }
-    
     //display current game state
     public void displayGameState(GameLogic game) {
         //display hangman drawing based on wrong guesses
         System.out.println("\n" + getHangmanDrawing(game.getIncorrectGuesses()));
-        
         //display current word with spaces between letters
         System.out.println("\nWord: " + formatWordDisplay(game.getCurrentWordState()));
-        
         //display guess counter
         System.out.println("Incorrect Guesses: " + game.getIncorrectGuesses() + 
                           "/" + game.getMaxIncorrectGuesses());
         System.out.println("Remaining Guesses: " + game.getRemainingGuesses());
-        
         //display guessed letters:
         Set<Character> guessedLetters = game.getGuessedLetters();
         if (!guessedLetters.isEmpty()) {
             System.out.println("Guessed Letters: " + formatGuessedLetters(guessedLetters));
         }
     }
-    
     //formats word display
     private String formatWordDisplay(String word) {
         StringBuilder formatted = new StringBuilder();
-        
         //add space between each character
         for (char c : word.toCharArray()) {
             //anyone know another way to do this? i took it from ai
             formatted.append(c).append(" ");
         }
-        
         return formatted.toString().trim(); // Remove trailing space
     }
-    
     //formats guessed letters
     private String formatGuessedLetters(Set<Character> letters) {
         StringBuilder sb = new StringBuilder();
@@ -61,10 +52,8 @@ public class GameUI {
         for (Character c : letters) {
             sb.append(c).append(" ");
         }
-        
         return sb.toString().trim();
     }
-    
     //get player's guesses
     public char getPlayerGuess() {
         //use infinite loop until valid input is received
@@ -72,16 +61,13 @@ public class GameUI {
             try {
                 System.out.print("\nEnter your guess (using a single letter): ");
                 String input = scanner.nextLine().trim();
-                
                 //validate input length
                 if (input.length() != 1) { //if not = 1
                     System.out.println("Error: Please enter exactly one letter.");
                     continue; //go back to start of loop
                 }
-                
                 //get first character
                 char guess = input.charAt(0);
-                
                 //validating it's a letter
                 if (!Character.isLetter(guess)) {
                     System.out.println("Error: Only alphabetic characters are allowed.");
@@ -91,7 +77,7 @@ public class GameUI {
                 //return valid guess
                 return guess;
                 
-            } catch (Exception a) {
+            } catch (Exception e) {
                 //handle any unexpected errors in input
                 System.out.println("Error reading input. Please try again.");
                 scanner.nextLine();
@@ -201,3 +187,4 @@ public class GameUI {
     }
 
 }
+
