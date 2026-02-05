@@ -127,7 +127,7 @@ public class GameUI {
     private String getHangmanDrawing(int incorrectGuesses) {
         //array of hangman stages (0-6 incorrect guesses)
         String[] hangmanStages = {
-            // Stage 0: No wrong guesses
+            //stage 0: No wrong guesses
             "  +---+\n" +
             "  |   |\n" +
             "      |\n" +
@@ -136,25 +136,25 @@ public class GameUI {
             "      |\n" +
             "=========",
             
-            // Stage 1: Head
-            "  +---+\n" +
-            "  |   |\n" +
-            "  O   |\n" +
-            "      |\n" +
-            "      |\n" +
-            "      |\n" +
-            "=========",
-            
-            // Stage 2: Body
+            //stage 1: Head
             "  +---+\n" +
             "  |   |\n" +
             "  O   |\n" +
+            "      |\n" +
+            "      |\n" +
+            "      |\n" +
+            "=========",
+            
+            //stage 2: Body
+            "  +---+\n" +
+            "  |   |\n" +
+            "  O   |\n" +
             "  |   |\n" +
             "      |\n" +
             "      |\n" +
             "=========",
             
-            // Stage 3: Left arm
+            //stage 3: Left arm
             "  +---+\n" +
             "  |   |\n" +
             "  O   |\n" +
@@ -163,7 +163,7 @@ public class GameUI {
             "      |\n" +
             "=========",
             
-            // Stage 4: Right arm
+            //stage 4: Right arm
             "  +---+\n" +
             "  |   |\n" +
             "  O   |\n" +
@@ -172,7 +172,7 @@ public class GameUI {
             "      |\n" +
             "=========",
             
-            // Stage 5: Left leg
+            //stage 5: Left leg
             "  +---+\n" +
             "  |   |\n" +
             "  O   |\n" +
@@ -181,7 +181,7 @@ public class GameUI {
             "      |\n" +
             "=========",
             
-            // Stage 6: Right leg (complete hangman)
+            //stage 6: Right leg (hangman)
             "  +---+\n" +
             "  |   |\n" +
             "  O   |\n" +
@@ -199,4 +199,5 @@ public class GameUI {
     public void close() {
         scanner.close();
     }
+
 }
