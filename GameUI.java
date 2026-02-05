@@ -1,6 +1,6 @@
 /**
  * Group Number: 1
- * Names: Shawn, Jing Yuan, Kyros, Justin
+ * Names: Shawn, Jing Yuan, Kyros, Justin, Tyler
  * 
  * PURPOSE: Handles all user interaction - displays game state, gets user input, and shows results.
  */
@@ -177,5 +177,6 @@ public class GameUI {
     }
 
 }
+
 
 
