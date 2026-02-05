@@ -2,7 +2,7 @@
  * Group Number:
  * Names: Shawn, Jing Yuan, Kyros, Justin, Tyler
  * 
- * PURPOSE: This is the brain of the game. It contains all game rules, tracks game state, and validates player moves.
+ * PURPOSE: This is the brain of the game. It contains all game rules, tracks game state, and validity of player moves.
  */
 
 import java.util.HashSet;
@@ -113,3 +113,4 @@ public class GameLogic {
     }
 
 }
+
