@@ -1,13 +1,12 @@
 
 /**
  * Group Number:
- * Names: Shawn, Jing Yuan, Kyros, Justin
+ * Names: Shawn, Jing Yuan, Kyros, Justin, Tyler
  *
  * PURPOSE: This is the pilot and controller of the game. It coordinates all other components and manages the game flow.
  */
 
 public class HangmanBasic {
-
     //main method
     public static void main(String[] args) {
         try {
@@ -24,7 +23,6 @@ public class HangmanBasic {
                     + targetWord.length() + " letters.");
             //create GameLogic object with the chosen word
             GameLogic game = new GameLogic(targetWord);
-
             //loop continues until game is over
             while (!game.isGameOver()) {
                 //display current game state
@@ -42,7 +40,6 @@ public class HangmanBasic {
             //display final result
             ui.displayGameResult(game);
             ui.close();
-
         } catch (Exception e) {
             System.err.println("Invalid input:" + e.getMessage()); //error message
             System.err.println("Please restart the game.");
