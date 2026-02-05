@@ -43,8 +43,8 @@ public class HangmanBasic {
             ui.displayGameResult(game);
             ui.close();
 
-        } catch (Exception a) {
-            System.err.println("Invalid input:" + a.getMessage()); //error message
+        } catch (Exception e) {
+            System.err.println("Invalid input:" + e.getMessage()); //error message
             System.err.println("Please restart the game.");
         }
     }
