@@ -23,7 +23,7 @@ public class HangmanBasic {
                     + targetWord.length() + " letters.");
             //create GameLogic object with the chosen word
             GameLogic game = new GameLogic(targetWord);
-            //loop continues until game is over
+            //loop continues until game over
             while (!game.isGameOver()) {
                 //display current game state
                 ui.displayGameState(game);
