@@ -73,10 +73,8 @@ public class GameUI {
                     System.out.println("Error: Only alphabetic characters are allowed.");
                     continue;
                 }
-                
                 //return valid guess
                 return guess;
-                
             } catch (Exception e) {
                 //handle any unexpected errors in input
                 System.out.println("Error reading input. Please try again.");
@@ -84,32 +82,26 @@ public class GameUI {
             }
         }
     }
-    
     //display message for invalid/duplicate guess
     public void displayInvalidGuessMessage() {
         System.out.println("You've already guessed that letter / it's invalid. Try again.");
     }
-    
     //display final game result
     public void displayGameResult(GameLogic game) {
         //show final hangman drawing
         System.out.println("\n" + getHangmanDrawing(game.getIncorrectGuesses()));
-        
         System.out.println("\n=======================================");
-        
         //display win/lose message
         if (game.isGameWon()) {
             System.out.println("CONGRATULATIONS! YOU WIN!");
         } else {
             System.out.println("GAME OVER! YOU LOSE!");
         }
-        
         //reveal the word
         System.out.println("The word was: " + game.getTargetWord());
         System.out.println("=======================================");
     }
-    
-    //generate ASCII art hangman drawing
+    //hangman drawing
     private String getHangmanDrawing(int incorrectGuesses) {
         //array of hangman stages (0-6 incorrect guesses)
         String[] hangmanStages = {
@@ -130,7 +122,7 @@ public class GameUI {
             "      |\n" +
             "      |\n" +
             "=========",
-            
+
             //stage 2: Body
             "  +---+\n" +
             "  |   |\n" +
@@ -176,15 +168,14 @@ public class GameUI {
             "      |\n" +
             "========="
         };
-        
         //return appropriate stage
         return hangmanStages[Math.min(incorrectGuesses, hangmanStages.length - 1)];
     }
-    
     //close 
     public void close() {
         scanner.close();
     }
 
 }
+
 
