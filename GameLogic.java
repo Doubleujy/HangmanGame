@@ -27,7 +27,11 @@ public class GameLogic {
         //create initial display: all underscores
         currentWordState = new StringBuilder();
         for (int i = 0; i < targetWord.length(); i++) {
-            currentWordState.append("_");  //one underscore per letter
+            if (targetWord.charAt(i) == ' ') {
+                currentWordState.append(' ');   // keep spaces visible
+            } else {
+                currentWordState.append("_");   // hide letters
+            }
         }
         //initialize empty set for guessed letters
         guessedLetters = new HashSet<>();

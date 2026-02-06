@@ -16,7 +16,7 @@ public class HangmanAdditional {
         while (playAgain) {
             int numPlayers = promptNumPlayers(sc);
 
-            // Get player names (optional but nice)
+            //get player names
             List<String> players = new ArrayList<>();
             for (int i = 1; i <= numPlayers; i++) {
                 System.out.print("Enter name for Player " + i + ": ");
@@ -29,16 +29,16 @@ public class HangmanAdditional {
             System.out.println("\n" + chooserName + " will choose the word/phrase/sentence.");
             String secret = promptSecret(sc, chooserName);
 
-            // "Hide" the secret from guessers (console version)
+            //hide the word from other players
             clearScreenFake();
 
-            // Start game
+            //start game
             GameLogic game = new GameLogic(secret);
 
             System.out.println("A word/phrase has been chosen. It has " + countLetters(secret) + " letter(s).");
             System.out.println("(Spaces/punctuation are shown automatically.)");
 
-            int guesserIndex = 1; // start from Player 2 (index 1)
+            int guesserIndex = 1; //start guess from 2nd player
 
             while (!game.isGameOver()) {
                 ui.displayGameState(game);
@@ -51,11 +51,11 @@ public class HangmanAdditional {
                 boolean valid = game.makeGuess(guess);
 
                 if (!valid) {
-                    // With the GameLogic patch below, invalid here is basically "duplicate"
+                    //wrong guess
                     ui.displayInvalidGuessMessage();
                 }
 
-                // rotate to next guesser (players 2..N)
+                //next player
                 guesserIndex++;
                 if (guesserIndex >= players.size()) {
                     guesserIndex = 1;
@@ -94,7 +94,7 @@ public class HangmanAdditional {
             System.out.print(chooserName + ", enter the secret word/phrase/sentence: ");
             String secret = sc.nextLine();
 
-            // Must contain at least one letter to be guessable
+            //letter check
             if (secret == null) secret = "";
             secret = secret.trim();
 
@@ -125,7 +125,6 @@ public class HangmanAdditional {
     }
 
     private static void clearScreenFake() {
-        // Console-safe "hide"
         for (int i = 0; i < 40; i++) System.out.println();
     }
 
