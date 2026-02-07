@@ -8,7 +8,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class GameLogic {
+public class HangmanAddGL {
     //instance variables to track game logic
     private String targetWord;          // The word to guess
     private StringBuilder currentWordState; // Current display (e.g., "J _ V _")
@@ -18,7 +18,7 @@ public class GameLogic {
     private boolean gameOver;           // Flag: is game finished?
     private boolean gameWon;            // Flag: did player win?
     //constructor - initializes a new game with given word
-    public GameLogic(String word) {
+    public HangmanAddGL(String word) {
         this.targetWord = word.toUpperCase();
         initializeGame();  // Set up initial game state
     }

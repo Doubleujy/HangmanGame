@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class WordLoader {
+public class HangmanAddWL {
     //instance variable to store words
     private List<String> wordList;
     //constructor
-    public WordLoader() {
+    public HangmanAddWL() {
         wordList = new ArrayList<>();  // Initialize empty list
         initializeWords();              // Populate with default words
     }

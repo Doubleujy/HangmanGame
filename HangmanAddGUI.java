@@ -8,9 +8,9 @@
 import java.util.Scanner;
 import java.util.Set;
 
-public class GameUI {
+public class HangmanAddGUI {
     private Scanner scanner;
-    public GameUI() {
+    public HangmanAddGUI() {
         scanner = new Scanner(System.in);
     }
     //display welcome message
@@ -20,7 +20,7 @@ public class GameUI {
         System.out.println("=======================================\n");
     }
     //display current game state
-    public void displayGameState(GameLogic game) {
+    public void displayGameState(HangmanAddGL game) {
         //display hangman drawing based on wrong guesses
         System.out.println("\n" + getHangmanDrawing(game.getIncorrectGuesses()));
         //display current word with spaces between letters
@@ -87,7 +87,7 @@ public class GameUI {
         System.out.println("You've already guessed that letter / it's invalid. Try again.");
     }
     //display final game result
-    public void displayGameResult(GameLogic game) {
+    public void displayGameResult(HangmanAddGL game) {
         //show final hangman drawing
         System.out.println("\n" + getHangmanDrawing(game.getIncorrectGuesses()));
         System.out.println("\n=======================================");

@@ -1,6 +1,6 @@
 
 /**
- * Group Number:
+ * Group Number: 5
  * Names: Shawn, Jing Yuan, Kyros, Justin, Tyler
  *
  * PURPOSE: This is the pilot and controller of the game. It coordinates all other components and manages the game flow.
@@ -19,8 +19,7 @@ public class HangmanBasic {
             //get random word from WordLoader
             String targetWord = wordLoader.getRandomWord();
             //inform player about word length
-            System.out.println("A word has been chosen. It has "
-                    + targetWord.length() + " letters.");
+            System.out.println("A word has been chosen. It has "+ targetWord.length() + " letters.");
             //create GameLogic object with the chosen word
             GameLogic game = new GameLogic(targetWord);
             //loop continues until game over
