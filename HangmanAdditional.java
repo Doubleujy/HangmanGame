@@ -2,7 +2,7 @@
  * Group Number: 5
  * Names: Shawn, Jing Yuan, Kyros, Justin, Tyler
  * 
- * PURPOSE: This is the brain of the game. It contains all game rules, tracks game state, and validity of player moves.
+ * Additional requirements: Extra players added, words and phrases allowed, 
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
